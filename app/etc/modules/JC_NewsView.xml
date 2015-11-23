@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JC_NewsView>
+            <active>true</active>
+            <codePool>community</codePool>
+        </JC_NewsView>
+    </modules>
+</config>

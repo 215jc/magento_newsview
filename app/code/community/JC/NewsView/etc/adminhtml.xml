@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config>
+    <!-- we are defining a new admin panel menu item -->
+    <menu>
+        
+        <!--
+        first create a top level menu item which will appear alongside CMS
+        -->
+        <jc_newsview translate="title"
+                module="jc_newsview">
+            <title>News</title>
+            <sort_order>75</sort_order>
+            <depends>
+                <module>JC_NewsView</module>
+            </depends>
+            
+            <!-- under this top level menu create a child menu item -->
+            <children>
+                <news translate="title" 
+                        module="jc_newsview">
+                    <title>Manage News</title>
+                    <sort_order>10</sort_order>
+                    
+                    <!-- 
+                    when the menu is clicked, take the user here 
+                    -->
+                 <action>jc_newsview_admin/news</action>
+                    
+                </news>
+            </children>
+        </jc_newsview>
+    </menu>
+    
+    <!-- define ACL for access to these menu items -->
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <jc_newsview translate="title"
+                            module="jc_newsview">
+                        <title>News Directory</title>
+                        <sort_order>75</sort_order>
+                        <children>
+                            <news translate="title" 
+                                    module="jc_newsview">
+                                <title>Manage News</title>
+                            </news>
+                        </children>
+                    </jc_newsview>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,29 @@
+<div class="block block-news">
+    <div class="block-title">
+        <strong><span>News</span></strong>
+    </div>
+    <div class="block-content">
+
+    <?php
+
+        $news_collection = Mage::getModel('jc_newsview/news')->getCollection(); 
+
+    	$i = 0;
+        foreach ($news_collection as $news_item) 
+        { 
+            $title = $news_item->getData('title');
+            $summary = $news_item->getData('summary');
+            $content = $news_item->getData('content');
+
+            echo "<strong>" . $title . "</strong><br />"; 
+            echo "<i>" . $summary . "</i><br /><br />"; 
+            echo "<span>" . $content . "</span><br /><br />"; 
+
+            if (++$i == 5) break;
+        } 
+
+    ?>
+
+        </div>
+    </form>
+</div>
